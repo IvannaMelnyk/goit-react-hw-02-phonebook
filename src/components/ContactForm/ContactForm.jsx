@@ -10,6 +10,7 @@ const INITIAL_STATE = {
 
 class ContactForm extends Component {
   state = INITIAL_STATE;
+
   handleChangeForm = ({ target }) => {
     const { name, value } = target;
     this.setState({ [name]: value });

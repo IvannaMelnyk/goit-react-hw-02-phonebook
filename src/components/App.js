@@ -4,29 +4,17 @@ import ContactList from './ContactList';
 import ContactForm from './ContactForm';
 import Filter from './Filter';
 
-// class App extends Component {
-//   state = {
-//     contacts: [
-//       { id: shortid.generate(), name: 'Rosie Simpson', number: '459-12-56' },
-//       { id: shortid.generate(), name: 'Hermione Kline', number: '443-89-12' },
-//       { id: shortid.generate(), name: 'Eden Clements', number: '645-17-79' },
-//       { id: shortid.generate(), name: 'Annie Copeland', number: '227-91-26' },
-//     ],
-//     filter: '',
-//   };
-
 export default class App extends Component {
   state = {
     contacts: [
-      { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
-      { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
-      { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
-      { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
+      { id: 'id-1', name: 'Rosie Simpson', phone: '459-12-56' },
+      { id: 'id-2', name: 'Hermione Kline', phone: '443-89-12' },
+      { id: 'id-3', name: 'Eden Clements', phone: '645-17-79' },
+      { id: 'id-4', name: 'Annie Copeland', phone: '227-91-26' },
     ],
     filter: '',
-    name: '',
-    number: '',
   };
+
   handleAddContact = newContact =>
     this.setState(({ contacts }) => ({
       contacts: [...contacts, newContact],
@@ -35,7 +23,7 @@ export default class App extends Component {
   handleCheckUniqueContact = name => {
     const { contacts } = this.state;
     const isExistContact = !!contacts.find(contact => contact.name === name);
-    isExistContact && alert('Contact us already exist');
+    isExistContact && alert('Contact is already exist');
     return !isExistContact;
   };
   handleRemoveContact = id =>
